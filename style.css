@@ -36,20 +36,51 @@ a {
   width: 100%;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .menu-item {
   margin: 0 3vh;
   padding: 1.5vh 4vh;
   border: 1px solid rgb(94, 94, 94);
-  border-radius: 20px;
-  font-size: 20px;
+  border-radius: 30px;
+  font-size: 22px;
+  font-weight: bold;
   color: black;
+  position: relative;
+  overflow: hidden;
+ 
 }
+
 .menu-item a{
   color: black;
 }
-.menu-item a:active
-{
- color: black;
+
+
+.menu-item::after{
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  border-radius: 50%;
+  transition: all ease 0.5s;
+  background-color: black;
+  z-index: 1;
+}
+
+.menu-item:hover::after{
+  bottom: 0;
+  border-radius: 0%;
+  color: white;
+ 
+}
+
+
+
+.menu-list li:hover  a{
+ color: white;
+ position: relative;
+ z-index: 9;
 }
